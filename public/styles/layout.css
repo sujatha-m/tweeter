@@ -24,13 +24,14 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+/* 
 
- main {
-  display: block;
-  margin: 0 50px 0 50px;
-  width: 90%;
-  align-items: center;
+Main div styles */
+main {
+  width: 90%; 
   margin: auto;
+  align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }

@@ -1,0 +1,38 @@
+/* Section styles */
+.new-tweet {
+  align-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Text input field styles*/
+#tweet-text {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  border-bottom: 3px solid #2b2b25;
+  color: #2c2b27;
+  font-weight: 700;
+  height: 40px;
+  outline: none;
+  resize: none;
+}
+/*For form button styles*/
+.new-tweet button {
+  background-color: #4056a1;
+  color: #ffffff;
+  font-family: 'Bungee', sans-serif;
+  margin-top: 8px;
+  outline: none;
+  padding: 6px 9px;
+  border-radius: 5px;
+}
+
+/*output style that counts the number of characters*/
+.counter {
+  color: #2b2619;
+  float: right;
+  font-family: Bungee, sans-serif;
+  margin-top: 8px;
+}

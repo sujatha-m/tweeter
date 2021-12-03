@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="./styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="./styles/nav.css" type= "text/css"/>
     <link rel="stylesheet" href="./styles/header.css" type="text/css"/>
+    <link rel="stylesheet" href="./styles/new-tweet.css" type="text/css"/>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/396cae99c5.js" crossorigin="anonymous"></script>
@@ -23,19 +25,19 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
+      <!-- <i class="fa-brands fa-twitter-square"></i> -->
       <span id = "logo">tweeter</span>
       <div class = "nav-right">
         <span><b>Write</b> new tweet</span>
         <button type= "button">
          <i class="fas fa-angle-double-down"></i>
         </button>
-        </span>
       </div>
     </nav>
 
@@ -51,10 +53,15 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h1>Hello this is Tweeter app</h1>
-      <h2>This is Front end application</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo mollitia voluptatibus itaque earum maxime deserunt impedit 
-        nesciunt facere expedita quae reiciendis, alias error vel molestiae recusandae laboriosam voluptates, magnam explicabo.</p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method='POST' action='/tweets/'>
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <button type="submit">Tweet</button> 
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </form>
+      </section>
     </main>
   </body>
 </html>
