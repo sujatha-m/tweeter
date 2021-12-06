@@ -36,3 +36,7 @@
   font-family: Bungee, sans-serif;
   margin-top: 8px;
 }
+
+.over-the-limit{
+  color: red;
+}
