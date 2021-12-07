@@ -12,19 +12,27 @@ $(document).ready(function() {
   //Function that post the tweets
   $('.new-tweet form').on('submit',function(event) {
     event.preventDefault();
-    $.ajax('/tweets/',{
-      method:'POST',
-      data:$(this).serialize(),
-    });
+    const data = $(this).serialize();
+    if (data === 'text=') {
+      return alert('You cannot post empty tweet');
+    } else if (data.length > 145) {
+      return alert('Your tweet is too long to submit');
+    } else {
+      $.ajax('/tweets/',{
+        method:'POST',
+        data,
+      });
+    }
   });
   //function that get the tweets from the url /tweets/ in json format
   const loadTweets = function() {
     $.ajax('/tweets/', {
       method:'GET',
-      dataType: 'JSON',
       success: tweets => renderTweets(tweets),
     });
   };
+
+  loadTweets();
 
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
@@ -55,6 +63,4 @@ $(document).ready(function() {
   `;
     return $tweet;
   };
-
-  loadTweets();
 });
