@@ -1,12 +1,14 @@
 #tweets-container {
   width: 100%;
   margin: 2em 0;
+
 }
 .tweet {
   align-content: center;
   border: 4px solid #20201e;
   display: flex;
   margin-top: 10px 0;
+  margin-bottom: 10px;
   flex-direction: column;
   width: 100%;
   padding: 0 8px;
