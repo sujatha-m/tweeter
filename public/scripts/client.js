@@ -9,6 +9,7 @@
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
 $(document).ready(function() {
+  
   //Function that post the tweets
   $('.new-tweet form').on('submit',function(event) {
     event.preventDefault();
@@ -18,16 +19,22 @@ $(document).ready(function() {
     } else if (data.length > 145) {
       return alert('Your tweet is too long to submit');
     } else {
-      $.ajax('/tweets/',{
+      $.ajax('/tweets',{
         method:'POST',
         data,
+        success: function() {
+          loadTweets();
+          $('#tweet-text').val('');
+          $('.counter').text('140');
+        }
       });
     }
   });
   //function that get the tweets from the url /tweets/ in json format
   const loadTweets = function() {
-    $.ajax('/tweets/', {
+    $.ajax('/tweets', {
       method:'GET',
+      dataType:'JSON',
       success: tweets => renderTweets(tweets),
     });
   };
@@ -36,7 +43,7 @@ $(document).ready(function() {
 
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $('#tweets-container').prepend(createTweetElement(tweet));
     }
   };
   /* Your code for creating the tweet element */
@@ -53,7 +60,6 @@ $(document).ready(function() {
     <footer>
     <div>${tweet.created_at}</div>
     <span class="icons">
-    <button class='delete' type="button">delete</button>
       <i class="fas fa-flag"></i>
       <i id="delete" class="fas fa-retweet"></i>
       <i class="fas fa-heart"></i>
