@@ -37,6 +37,14 @@ const data = [
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
 $(document).ready(function() {
+  $('.new-tweet form').on('submit',function(event) {
+    event.preventDefault();
+    $.ajax('/tweets/',{
+      method:'POST',
+      data:$(this).serialize(),
+    });
+  });
+
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       $('#tweets-container').append(createTweetElement(tweet));
