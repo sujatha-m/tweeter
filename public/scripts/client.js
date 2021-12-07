@@ -6,37 +6,10 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    user: {
-      name: 'Newton',
-      avatars: 'https://i.imgur.com/73hZDYK.png',
-      handle: '@SirIsaac'
-    },
-    content: {
-      text:
-        'If I have seen further it is by standing on the shoulders of giants'
-    },
-    created_at: 1461116232227
-  },
-  {
-    user: {
-      name: 'Descartes',
-      avatars: 'https://i.imgur.com/nlhLi3I.png',
-      handle: '@rd'
-    },
-    content: {
-      text: 'Je pense , donc je suis'
-    },
-    created_at: 1461113959088
-  }
-];
-
-// loops through tweets
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
 $(document).ready(function() {
+  //Function that post the tweets
   $('.new-tweet form').on('submit',function(event) {
     event.preventDefault();
     $.ajax('/tweets/',{
@@ -44,6 +17,14 @@ $(document).ready(function() {
       data:$(this).serialize(),
     });
   });
+  //function that get the tweets from the url /tweets/ in json format
+  const loadTweets = function() {
+    $.ajax('/tweets/', {
+      method:'GET',
+      dataType: 'JSON',
+      success: tweets => renderTweets(tweets),
+    });
+  };
 
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
@@ -64,8 +45,9 @@ $(document).ready(function() {
     <footer>
     <div>${tweet.created_at}</div>
     <span class="icons">
+    <button class='delete' type="button">delete</button>
       <i class="fas fa-flag"></i>
-      <i class="fas fa-retweet"></i>
+      <i id="delete" class="fas fa-retweet"></i>
       <i class="fas fa-heart"></i>
     </span>
   </footer>
@@ -74,5 +56,5 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  renderTweets(data);
+  loadTweets();
 });
