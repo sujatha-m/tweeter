@@ -30,6 +30,19 @@ Simply write your thoughts in tweet field and click tweet. You will see it appea
 Tweet validation prevents you from sending empty tweets, or those with over 140 characters.
 Each tweet shows the user's name, handle, and when hovered over, social icons.
 
+The Tweeter project will look like the images below:
+
+![Desktop Version](./public/images/Screenshot1.png)
+
+![Mobile Version](./public/images/Screenshot2.png)
+
+![Mobile Version Tweet container](./public/images/Screenshot3.png)
+
+![Error Message](./public/images/Screenshot4.png)
+
+![Error for Empty Message](./public/images/Screenshot5.png)
+
+
 ## Dependencies
 - Express
 - Node 5.10.x or above
