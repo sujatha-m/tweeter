@@ -1,8 +1,8 @@
 nav {
     position: fixed;
+    background-color: #ccac66;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
     height: 120px;
-    background-color:#4056A1;
-    background-image: url(../images/back-pattern.png);
     color: #FFFFFF;
     width: 100vw;
     padding: 1.5em;
@@ -46,4 +46,13 @@ nav button {
     100% {
       transform: translateY(-7px)
     }
+  }
+
+  /*nav color blue for desktop*/
+@media only screen and (min-width:1024px){
+    nav {
+      background-image: url(../images/back-pattern.png);;
+      background-color:#4056A1;
+    }
+    
   }
