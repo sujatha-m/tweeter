@@ -9,7 +9,13 @@
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
 $(document).ready(function() {
-  
+  //function to make html text safe
+  const escape = function(str) {
+    let section = document.createElement("section");
+    section.appendChild(document.createTextNode(str));
+    return section.innerHTML;
+  };
+
   //Function that post the tweets
   $('.new-tweet form').on('submit',function(event) {
     event.preventDefault();
@@ -56,7 +62,7 @@ $(document).ready(function() {
         </div>
       <span class="user">@Username</span>
      </header>
-    <section>${tweet.content.text}</section>
+    <section>${escape(tweet.content.text)}</section>
     <footer>
     <div>${tweet.created_at}</div>
     <span class="icons">
