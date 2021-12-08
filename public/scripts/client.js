@@ -16,14 +16,19 @@ $(document).ready(function() {
     return section.innerHTML;
   };
 
+  $('.error-message').hide();
+
   //Function that post the tweets
   $('.new-tweet form').on('submit',function(event) {
     event.preventDefault();
     const data = $(this).serialize();
     if (data === 'text=') {
-      return alert('You cannot post empty tweet');
+      $('#error-text').append('<p>Enter a valid message</p>');
+      $('.error-message').fadeIn();
+      return;
     } else if (data.length > 145) {
-      return alert('Your tweet is too long to submit');
+      $('#error-text').append('<p> Your tweet is too long to submit limnit 140 chars</p>');
+      $('.error-message').fadeIn();
     } else {
       $.ajax('/tweets',{
         method:'POST',
