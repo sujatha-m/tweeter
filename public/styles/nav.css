@@ -2,6 +2,7 @@ nav {
     position: fixed;
     height: 120px;
     background-color:#4056A1;
+    background-image: url(../images/back-pattern.png);
     color: #FFFFFF;
     width: 100vw;
     padding: 1.5em;
@@ -26,8 +27,23 @@ nav .nav-right {
 }
 
 nav button {
-    background-color: #4056A1;
-    color: rgb(209, 15, 15);
+    background-color: transparent;
+    color: red;
+    font-weight: bold;
     border-style: none;
     cursor: pointer;
+    position: relative;
+    animation: growDown 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    margin-top: 2%;
+  }
+
+  @keyframes growDown {
+    0% {
+      transform: translateY(0)
+    }
+    100% {
+      transform: translateY(-7px)
+    }
   }

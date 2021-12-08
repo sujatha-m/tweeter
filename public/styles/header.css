@@ -10,3 +10,9 @@ align-items: center;
 justify-content: center;
 padding: 10px;
 }
+
+#image{
+  height:300px;
+  width:300px;
+  margin-top:3%;
+}
