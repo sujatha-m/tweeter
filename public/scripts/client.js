@@ -24,11 +24,13 @@ $(document).ready(function() {
     event.preventDefault();
     const data = $(this).serialize();
     if (data === 'text=') {
+      $('#error-text').empty();
       $('#error-text').append('<p>Enter a valid message</p>');
       $('.error-message').fadeIn();
       return;
     } else if (data.length > 145) {
-      $('#error-text').append('<p> Your tweet is too long to submit limnit 140 chars</p>');
+      $('#error-text').empty();
+      $('#error-text').append('<p>Your tweet is too long to submit limit 140 chars</p>');
       $('.error-message').fadeIn();
     } else {
       $.ajax('/tweets',{
