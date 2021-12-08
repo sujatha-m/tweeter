@@ -3,10 +3,17 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
- html {
+//Sass variables
+$font-family: 'Source Sans Pro', 'Bungee', sans-serif;
+$background-color: #f4f1ec;
+$font-color: #545149;
+
+html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -15,20 +22,14 @@
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: $font-color;
+  background-color: $background-color;
   font-size: 24px;
-  font-family: 'Source Sans Pro' sans-serif, 'Bungee';
+  font-family: $font-family;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-/* 
-
-Main div styles */
-main {
-  width: 90%; 
+main div styles */ main {
+  width: 90%;
   margin: auto;
   align-items: center;
   display: flex;
@@ -37,15 +38,15 @@ main {
 }
 
 /*media query for desktop*/
-@media only screen and (min-width:1024px){
-  body{
-    display:flex;
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
     justify-content: center;
     align-content: center;
   }
-  .container{
-    display:flex;
-    width:60%;
-    margin:200px 30px;
+  .container {
+    display: flex;
+    width: 60%;
+    margin: 200px 30px;
   }
-} 
+}

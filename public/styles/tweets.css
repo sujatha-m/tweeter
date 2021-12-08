@@ -1,11 +1,10 @@
 #tweets-container {
   width: 100%;
   margin: 2em 0;
-
 }
-.tweet {
+#tweets-container .tweet {
   align-content: center;
-  border: 4px solid #20201e;
+  border: 4px solid black;
   display: flex;
   margin-top: 10px 0;
   margin-bottom: 10px;
@@ -13,8 +12,7 @@
   width: 100%;
   padding: 0 8px;
 }
-/*for article header*/
-.tweet header {
+#tweets-container .tweet header {
   justify-content: space-between;
   background-color: inherit;
   background-image: none;
@@ -24,35 +22,29 @@
   margin: 8px;
   padding: 6px 9px;
   width: 100%;
+  /*to display at the center of the profile icon*/
 }
-
-.tweet section {
-  line-height: 2.5;
-}
-/*to display at the center of the profile icon*/
-.tweet-icon {
+#tweets-container .tweet header .tweet-icon {
   align-content: center;
   display: flex;
   justify-content: center;
 }
-/*to align text to the center of the image*/
-.tweet-icon div.icon-text {
+#tweets-container .tweet header .icon-text {
   align-self: center;
 }
-
-.tweet header .user {
-  color: #9a9a9a;
+#tweets-container .tweet header .user {
+  color: #888888;
 }
-/*for text inside article*/
-.tweet div {
+#tweets-container .tweet header div {
   height: auto;
   padding: 6px 9px;
   width: auto;
 }
-
-/*for article footer*/
-.tweet footer {
-  border-top: 4px solid #20201e;
+#tweets-container .tweet section {
+  line-height: 2.5;
+}
+#tweets-container .tweet footer {
+  border-top: 4px solid black;
   display: flex;
   flex-direction: row;
   height: auto;
@@ -61,16 +53,15 @@
   padding: 6px 9px;
   width: auto;
 }
-
-.tweet .icons {
+#tweets-container .tweet footer .icons {
   color: #4056a1;
 }
-.tweet .icons i {
+#tweets-container .tweet footer .icons i {
   margin-left: 0.33em;
 }
 
-.tweet .icons i:hover,
-.tweet .icons i:focus {
+footer .icons i:hover,
+.icons i:focus {
   cursor: pointer;
   color: goldenrod;
 }

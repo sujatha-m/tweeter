@@ -1,0 +1,66 @@
+//sass variables
+$primary-color: goldenrod;
+$seconday-color: #4056a1;
+$text-color1: #ffffff;
+$error-color: rgb(243, 40, 40);
+$font-family: 'Bungee', sans-serif;
+$seconday-font: 'Source Sans Pro', sans-serif;
+$background-image: url(../images/back-pattern.png);
+
+nav {
+  position: fixed;
+  background-image: $background-image;
+  background-color: $primary-color;
+  height: 120px;
+  color: $text-color1;
+  width: 100vw;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+
+  #logo {
+    font-family: $font-family;
+  }
+
+  .nav-right {
+    font-family: $seconday-font;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+  }
+
+  button {
+    background-color: transparent;
+    color: $error-color;
+    font-weight: bold;
+    border-style: none;
+    cursor: pointer;
+    position: relative;
+    animation: growDown 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    margin-top: 2%;
+  }
+}
+
+@keyframes growDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-7px);
+  }
+}
+
+/*nav color blue for desktop*/
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-image: $background-image;
+    background-color: $seconday-color;
+  }
+}

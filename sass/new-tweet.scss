@@ -1,0 +1,67 @@
+// sass variables
+$seconday-color: #4056a1;
+$text-color1: #ffffff;
+$error-color: rgb(243, 40, 40);
+$font-family: 'Bungee', sans-serif;
+$black-color: #2b2619;
+
+/* Section styles */
+.new-tweet {
+  align-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Text input field styles*/
+#tweet-text {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  border-bottom: 3px solid $black-color;
+  color: $black-color;
+  font-weight: 700;
+  height: 40px;
+  outline: none;
+  resize: none;
+}
+/*For form button styles*/
+.new-tweet button {
+  background-color: $seconday-color;
+  color: $text-color1;
+  font-family: $font-family;
+  margin-top: 8px;
+  outline: none;
+  padding: 6px 9px;
+  border-radius: 5px;
+}
+
+/*output style that counts the number of characters*/
+.counter {
+  color: $black-color;
+  float: right;
+  font-family: $font-family;
+  margin-top: 8px;
+}
+
+.over-the-limit {
+  color: $error-color;
+}
+
+.error-message {
+  align-content: center;
+  border: 4px solid $error-color;
+  color: $error-color;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2rem;
+  font-weight: bold;
+  justify-content: space-evenly;
+  margin: 8px;
+  width: 70%;
+}
+
+.icon-design {
+  font-size: 2rem;
+  align-self: center;
+}

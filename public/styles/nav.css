@@ -1,58 +1,53 @@
 nav {
-    position: fixed;
-    background-color: #ccac66;
-    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-    height: 120px;
-    color: #FFFFFF;
-    width: 100vw;
-    padding: 1.5em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    top:0;
-    left: 0;
-    right: 0;
-    z-index: 50;
+  position: fixed;
+  background-image: url(../images/back-pattern.png);
+  background-color: goldenrod;
+  height: 120px;
+  color: #ffffff;
+  width: 100vw;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
 }
-
-#logo {
-    font-family: 'Bungee', sans-serif;
+nav #logo {
+  font-family: "Bungee", sans-serif;
 }
-
 nav .nav-right {
-    font-family: 'Source Sans Pro', sans-serif;
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+}
+nav button {
+  background-color: transparent;
+  color: #f32828;
+  font-weight: bold;
+  border-style: none;
+  cursor: pointer;
+  position: relative;
+  animation: growDown 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  margin-top: 2%;
 }
 
-nav button {
-    background-color: transparent;
-    color: red;
-    font-weight: bold;
-    border-style: none;
-    cursor: pointer;
-    position: relative;
-    animation: growDown 0.5s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    margin-top: 2%;
+@keyframes growDown {
+  0% {
+    transform: translateY(0);
   }
-
-  @keyframes growDown {
-    0% {
-      transform: translateY(0)
-    }
-    100% {
-      transform: translateY(-7px)
-    }
+  100% {
+    transform: translateY(-7px);
   }
-
-  /*nav color blue for desktop*/
-@media only screen and (min-width:1024px){
-    nav {
-      background-image: url(../images/back-pattern.png);;
-      background-color:#4056A1;
-    }
-    
+}
+/*nav color blue for desktop*/
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-image: url(../images/back-pattern.png);
+    background-color: #4056a1;
   }
+}
