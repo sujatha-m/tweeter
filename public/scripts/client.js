@@ -9,6 +9,7 @@
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
 $(document).ready(function() {
+
   //function to make html text safe
   const escape = function(str) {
     let section = document.createElement("section");
@@ -69,7 +70,7 @@ $(document).ready(function() {
      </header>
     <section>${escape(tweet.content.text)}</section>
     <footer>
-    <div>${tweet.created_at}</div>
+    <div>${timeago.format(tweet.created_at)}</div>
     <span class="icons">
       <i class="fas fa-flag"></i>
       <i id="delete" class="fas fa-retweet"></i>
